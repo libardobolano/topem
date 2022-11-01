@@ -1,0 +1,40 @@
+/topem-back/node_modules
+/topem-back/public/hot
+/topem-back/public/storage
+/topem-back/storage/*.key
+/topem-back/vendor
+/topem-back.env
+/topem-back.env.backup
+/topem-back.phpunit.result.cache
+/topem-backdocker-compose.override.yml
+/topem-backHomestead.json
+/topem-backHomestead.yaml
+/topem-backnpm-debug.log
+/topem-backyarn-error.log
+/topem-back/.idea
+/topem-back/.vscode
+
+
+/prueba-vue-topem/.DS_Store
+/prueba-vue-topem/node_modules
+/prueba-vue-topem/dist
+
+
+# local env files
+/prueba-vue-topem/.env.local
+/prueba-vue-topem/.env.*.local
+
+# Log files
+/prueba-vue-topem/npm-debug.log*
+/prueba-vue-topem/yarn-debug.log*
+/prueba-vue-topem/yarn-error.log*
+/prueba-vue-topem/pnpm-debug.log*
+
+# Editor directories and files
+/prueba-vue-topem/.idea
+/prueba-vue-topem/.vscode
+/prueba-vue-topem/*.suo
+/prueba-vue-topem/*.ntvs*
+/prueba-vue-topem/*.njsproj
+/prueba-vue-topem/*.sln
+/prueba-vue-topem/*.sw?
