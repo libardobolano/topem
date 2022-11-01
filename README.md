@@ -28,3 +28,6 @@
 
 
 ## usage
+***
+* email: libardobolano@mail.com
+* password: 123456
