@@ -1,0 +1,62 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: dolly
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: topem-test
+    container_name: topem-test-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    ports:
+      - 6009:6001
+    volumes:
+      - ./:/var/www
+    networks:
+      - topem-test
+
+  db:
+    image: mysql:8.0
+    container_name: topem-test-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - topem-test
+
+  nginx:
+    image: nginx:alpine
+    container_name: topem-test-nginx
+    restart: unless-stopped
+    ports:
+      - 8009:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - topem-test
+  dbadmin:
+    container_name: topem-test-dbadminer
+    hostname: dbadmin
+    image: adminer
+    ports:
+      - 8089:8080
+    depends_on:
+      - db
+    networks:
+      - topem-test
+    restart: unless-stopped
+
+networks:
+  topem-test:
+    driver: bridge
