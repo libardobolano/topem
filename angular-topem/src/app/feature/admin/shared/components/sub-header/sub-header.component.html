@@ -1,0 +1,17 @@
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">{{title}}</h1>
+      </div>
+      <div class="col-sm-6" *ngIf="links.length > 0">
+        <ol class="breadcrumb float-sm-right">
+          <li *ngFor="let link of links" class="breadcrumb-item">
+            <a *ngIf="link.url" [routerLink]="[link.url]">{{ link.name }}</a>
+            <span *ngIf="!link.url">{{ link.name }}</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

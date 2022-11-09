@@ -28,4 +28,14 @@ class AuthController extends Controller
             return $this->errorResponse($e->getMessage());
         }
     }
+
+    public function logout()
+    {
+        try{
+            $this->authRepository->logOut();
+            return $this->successResponse('successful operation',null,200);
+        }catch (\Exception $e){
+            return $this->errorResponse($e->getMessage());
+        }
+    }
 }

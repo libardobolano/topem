@@ -1,0 +1,46 @@
+<app-sub-header
+[title]="'Orders'"
+></app-sub-header>
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Order number</th>
+                  <th>Total</th>
+                  <th>Total iva</th>
+                  <th>Transmitter name</th>
+                  <th>Receiver name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders">
+                  <td>{{ order.order_number }}</td>
+                  <td>{{ order.order_total }}</td>
+                  <td>{{ order.order_iva }}</td>
+                  <td>{{ order.customer_transmitter.customer_name }}</td>
+                  <td>{{ order.customer_receiver.customer_name }}</td>
+                  <td>
+                    <div class="btn-group">
+                      <a [routerLink]="['/admin','orders',order.id]" class="btn btn-secondary btn-small">
+                        <i class="fas fa-eye"></i>
+                      </a>
+                      <a [routerLink]="['/admin','orders','update',order.id]" class="btn btn-primary btn-small">
+                        <i class="fa fa-pencil-alt"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

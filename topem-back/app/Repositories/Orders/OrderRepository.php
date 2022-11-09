@@ -64,8 +64,12 @@ class OrderRepository extends Repository implements OrderRepositoryInterface
     public function updateOrder(array $data,$id)
     {
         $data = $this->asignedCustomerOrder($data);
-        $order = $this->update($data,$id);
-        $this->itemRepository->addItemsOrder($data['items'],$order->id);
+        $order = $this->update([
+            'order_value'=>$data['order_value'],
+            'order_iva'=>$data['order_iva'],
+            'order_total'=>$data['order_total'],
+        ],$id);
+        $this->itemRepository->addItemsOrder($data['items'],$id);
         return $order;
     }
 

@@ -38,3 +38,46 @@
 /prueba-vue-topem/*.njsproj
 /prueba-vue-topem/*.sln
 /prueba-vue-topem/*.sw?
+
+
+
+# Compiled output
+/angular-topem/dist
+/angular-topem/tmp
+/angular-topem/out-tsc
+/angular-topem/bazel-out
+
+# Node
+/angular-topem/node_modules
+/angular-topemnpm-debug.log
+/angular-topemyarn-error.log
+
+# IDEs and editors
+/angular-topem/.idea/
+/angular-topem/.project
+/angular-topem/.classpath
+/angular-topem/.c9/
+/angular-topem/*.launch
+/angular-topem/.settings/
+/angular-topem/*.sublime-workspace
+
+# Visual Studio Code
+/angular-topem/.vscode/*
+/angular-topem/!.vscode/settings.json
+/angular-topem/!.vscode/tasks.json
+/angular-topem/!.vscode/launch.json
+/angular-topem/!.vscode/extensions.json
+/angular-topem/.history/*
+
+# Miscellaneous
+/angular-topem/.angular/cache
+/angular-topem/.sass-cache/
+/angular-topem/connect.lock
+/angular-topem/coverage
+/angular-topem/libpeerconnection.log
+/angular-topem/testem.log
+/angular-topem/typings
+
+# System files
+/angular-topem/.DS_Store
+/angular-topem/Thumbs.db
