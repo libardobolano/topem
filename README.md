@@ -10,7 +10,7 @@
 
 ### frontend
 * node  14.17.5
-* vue 5.0.08
+* angular 14.2.0
 
 ## Installation backend
 ***
